@@ -74,7 +74,7 @@ public class Getstarted {
         collection.insertMany(documents);
         System.out.println("\tTotal # of documents: " + collection.countDocuments());
 
-        // lets get all the documents in the collection and print them out
+        // let's get all the documents in the collection and print them out
         try (MongoCursor<Document> cursor = collection.find().iterator())
         {
             while (cursor.hasNext()) {
@@ -114,8 +114,7 @@ public class Getstarted {
         AggregateIterable<Document> iterable = collection.aggregate(pipeline);
         System.out.println("Aggregation Result:");
         iterable.forEach(documentX -> System.out.println(documentX.toJson())); 
-
-        // release resources
+        
         mongoClient.close();
     }
 }
